@@ -8,10 +8,10 @@ class Tickled{
   private:
     bool s;
     int p;
-    void InitPin();
-    void SetPin();
+    void InitPin(int x);
+    void SetPin(bool x);
   public:
-    void Init(int pin);
+    void Init(int p);
     void Init();
     void LEDon();
     void LEDoff();
