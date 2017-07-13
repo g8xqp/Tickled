@@ -1,31 +1,23 @@
 #include <dmc_Tickled.h>
 
-void Tickled::InitPin(){
-  pinMode(p,OUTPUT);
+void Tickled::InitPin(int x){
+  pinMode(p=x,OUTPUT);
 }
-void Tickled::SetPin(){
-  digitalWrite(p,s);
+void Tickled::SetPin(bool x){
+  digitalWrite(p,s=x);
 }
-void Tickled::Init(int pin){
-  p=pin;
-  InitPin();
+void Tickled::Init(int x){
+  InitPin(x);
 }
 void Tickled::Init(){
-  p=TICKLED;;
-  InitPin();
+  InitPin(TICKLED);
 }
 void Tickled::LEDon(){
-  s=true;
-  SetPin();
+  SetPin(true);
 }
 void Tickled::LEDoff(){
-  s=false;
-  SetPin();
+  SetPin(false);
 }
 void Tickled::LEDtoggle(){
-  if(s){
-    LEDoff();
-  } else {
-    LEDon();
-  }
+  SetPin(!s)
 }
